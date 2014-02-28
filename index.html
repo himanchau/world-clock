@@ -72,7 +72,7 @@
                 -webkit-transform: rotate(0);
             }
             #face {
-                opacity: .9;
+                opacity: 1;
             }
             .test {
                 -webkit-transform: rotate(162deg);
@@ -107,7 +107,6 @@
     <script type="text/javascript" src="jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="jquery.arctext.js"></script>
     <script type="text/javascript">
-        var clock = document.getElementById('clock');
         var timezones = {
             'London' : {
                 'offset' : 0,
@@ -286,6 +285,7 @@
         }
 
         // Output all timezones
+        var cities = document.getElementById('cities');
         for(var city in timezones) {
             console.log(timezones[city].offset);
             var el = document.createElement('div');
@@ -294,11 +294,11 @@
             el.className = 'city';
             if (lh = timezones[city].height) el.style.lineHeight = lh+'px';
             el.style.webkitTransform = 'rotate('+(timezones[city].rotate+180)+'deg)';
-            $('#cities').append(el);
+            cities.appendChild(el);
             //$('#data').append(city + ' ' + formatTime(getTimezoneTime(city)) + '<br>');
         }
 
-        $('.city').arctext({radius: 90});
+        //$('.city').arctext({radius: 90});
 
         // Rotate the face of the clock every second
         (function foo() {
