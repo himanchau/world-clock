@@ -6,7 +6,7 @@
 body {
     position: fixed; top: 0; right: 0; bottom: 0; left: 0;
     background: #fff; color: #444;
-    font-family: "Arial"; font-size: 9px; line-height: 12px;
+    font-family: "AvenirNextCondensed-Regular"; font-size: 9px; line-height: 12px;
 }
 
 .arrow {
@@ -31,7 +31,6 @@ body {
     border-left-color: rgba(0,0,0,.5);
 }
 .arrow span {
-    visibility: hidden;
     display: inline-block; position: absolute;
     width: 50px; text-align: center;
     height: 11px;
@@ -49,11 +48,7 @@ body {
     top: -9px; left: -12px;
 }
 
-@-webkit-keyframes spin {
-    from { -webkit-transform: rotate(0); }
-    to { -webkit-transform: rotate(360deg); }
-}
-#face, #cities, .test {
+#face, #cities {
     background: #eee; border-radius: 280px;
     position: absolute;
     top: 50%; margin-top: -140px;
@@ -65,10 +60,6 @@ body {
 #face {
     opacity: 1;
 }
-.test {
-    -webkit-transform: rotate(162deg);
-    opacity: .2;
-}
 #cities {
     background: none;
     font-size: 10px;
@@ -79,4 +70,17 @@ body {
     height: 20px; line-height: 20px;
     text-align: center;
     -webkit-transform-origin: 50px 140px;
+    pointer-events: none;
+}
+#cities .city p {
+    display: inline-block; line-height: 10px;
+    pointer-events: auto;
+}
+#data {
+    position: absolute;
+    top: 50%; left: 50%;
+    font-size: 12px; line-height: 15px;
+    height: 15px; width: 100px;
+    margin-left: -50px; margin-top: -15px;
+    z-index: 100; text-align: center;
 }
